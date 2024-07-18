@@ -19,7 +19,8 @@ spec:
 
 
 ********************************************
-Pass Environment Vars to running container 
+kubectl exec <pod name> -- printenv
+kubectl exec env-var -- printenv
 ********************************************
 
 
