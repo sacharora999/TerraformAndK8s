@@ -23,14 +23,8 @@ kubectl exec <pod name> -- printenv
 kubectl exec env-var -- printenv
 ********************************************
 
-
-
 ********************************************
-Pass Environment Vars to running container 
+kubectl logs <pod name> 
 ********************************************
 
 
-
-********************************************
-Pass Environment Vars to running container 
-********************************************
