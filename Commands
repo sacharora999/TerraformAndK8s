@@ -1,0 +1,35 @@
+********************************************
+Pass Environment Vars to running container 
+********************************************
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-var
+  labels:
+    purpose: demonstrate-env-var
+spec:
+  containers:
+  - name: env-var-container
+    image: wordpress
+    env:
+    - name: WORDPRESS_VERSION
+      value: "5.2.2"
+    - name: WORDPRESS_USER
+      value: "ubuntu"
+
+
+********************************************
+Pass Environment Vars to running container 
+********************************************
+
+
+
+********************************************
+Pass Environment Vars to running container 
+********************************************
+
+
+
+********************************************
+Pass Environment Vars to running container 
+********************************************
