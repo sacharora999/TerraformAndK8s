@@ -126,4 +126,5 @@ We can't move running pod from one node to another. Pod is just a running proces
 
 ********************************************
 kubectl get pods --selector env=dev 
+kubectl get pods --selector env=dev --no-headers | wc -l
 ********************************************
