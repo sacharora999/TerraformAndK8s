@@ -97,10 +97,10 @@ spec:
       command: ["sh", "-c"]
       args:
       - while true; do
-          if [[ -e /etc/podinfo/labels ]]; then
-            echo -en '\n\n'; cat /etc/podinfo/labels; fi;
-          if [[ -e /etc/podinfo/annotations ]]; then
-            echo -en '\n\n'; cat /etc/podinfo/annotations; fi;
+          if [[ -e /etc/podlevelinfo/labels ]]; then
+            echo -en '\n\n'; cat /etc/podlevelinfo/labels; fi;
+          if [[ -e /etc/podlevelinfo/annotations ]]; then
+            echo -en '\n\n'; cat /etc/podlevelinfo/annotations; fi;
           sleep 5;
         done;
       volumeMounts:
