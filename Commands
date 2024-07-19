@@ -25,6 +25,7 @@ kubectl exec env-var -- printenv
 
 ********************************************
 kubectl logs <pod name> 
+Environment Vars + Volume Files = Downward API
 ********************************************
 
 
