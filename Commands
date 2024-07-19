@@ -137,4 +137,7 @@ Taints and Tolerations
 ****************************************************************************************
 kubectl taint node node-name key=value:taint-effect
 taint-effect : NoSchedule PreferNoSchedule NoExecute
+
+
+kubectl describe node kubemaster | grep Taint
 ****************************************************************************************
