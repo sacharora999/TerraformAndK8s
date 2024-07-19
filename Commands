@@ -1,3 +1,13 @@
+************************************************************************************************************************************
+docker: Not healthy: "docker version --format {{.Server.Os}}-{{.Server.Version}}:{{.Server.Platform.Name}}" exit status 1: 
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: 
+Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.46/version": dial unix /var/run/docker.sock: connect: permission denied
+************************************************************************************************************************************
+
+
+sudo usermod -a -G docker $USER
+newgrp docker
+
 ********************************************
 Pass Environment Vars to running container 
 ********************************************
@@ -27,5 +37,45 @@ kubectl exec env-var -- printenv
 kubectl logs <pod name> 
 Environment Vars + Volume Files = Downward API
 ********************************************
+
+
+****************************************************************************************
+Environment Variables in Kubernetes : Exposing Pod Information to Containers
+****************************************************************************************
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dapi-envars
+spec:
+  containers:
+    - name: test-container
+      image: registry.k8s.io/busybox
+      command: [ "sh", "-c"]
+      args:
+      - while true; do
+          echo -en '\n';
+          printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE;
+          printenv MY_POD_IP MY_POD_SERVICE_ACCOUNT;
+          sleep 10;
+        done;
+      env:
+        - name: MY_NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: MY_POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: MY_POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: MY_POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+  restartPolicy: Never
 
 
