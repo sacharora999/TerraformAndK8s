@@ -124,7 +124,17 @@ Delete and Recreate the POD
 kubectl replace --force -f filename.yaml
 We can't move running pod from one node to another. Pod is just a running process (container) 
 
+
+Selectors and Labels
 ********************************************
 kubectl get pods --selector env=dev 
 kubectl get pods --selector env=dev --no-headers | wc -l
 ********************************************
+
+
+
+Taints and Tolerations
+****************************************************************************************
+kubectl taint node node-name key=value:taint-effect
+taint-effect : NoSchedule PreferNoSchedule NoExecute
+****************************************************************************************
