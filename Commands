@@ -116,3 +116,14 @@ spec:
           - path: "annotations"
             fieldRef:
               fieldPath: metadata.annotations
+
+
+********************************************
+Delete and Recreate the POD
+********************************************
+kubectl replace --force -f filename.yaml
+We can't move running pod from one node to another. Pod is just a running process (container) 
+
+********************************************
+kubectl get pods --selector env=dev 
+********************************************
