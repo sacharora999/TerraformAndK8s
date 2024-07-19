@@ -3,8 +3,6 @@ docker: Not healthy: "docker version --format {{.Server.Os}}-{{.Server.Version}}
 permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: 
 Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.46/version": dial unix /var/run/docker.sock: connect: permission denied
 ************************************************************************************************************************************
-
-
 sudo usermod -a -G docker $USER
 newgrp docker
 
