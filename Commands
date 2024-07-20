@@ -141,3 +141,10 @@ taint-effect : NoSchedule PreferNoSchedule NoExecute
 
 kubectl describe node kubemaster | grep Taint
 ****************************************************************************************
+
+
+
+Label the node
+********************************************
+kubectl label node <node name> key=value
+********************************************
