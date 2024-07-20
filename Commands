@@ -145,11 +145,11 @@ kubectl describe node kubemaster | grep Taint
 
 
 Label the node (Node Selector)
-********************************************
+****************************************************************************************
 kubectl label node <node name> key=value
 
 kubectl label node node01 size=large
 
 What about size=medium or large 
 NOT Small >>>> Node Affinity
-********************************************
+****************************************************************************************
